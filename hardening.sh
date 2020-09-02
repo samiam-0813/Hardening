@@ -5,6 +5,15 @@
 
 ########################################################################
 
+#####Updated by Samantha September 01###################################
+########################################################################
+if
+ [ ${USER} !=root ]
+then
+  echo "You need root access to run this script!"
+ exit 100
+fi
+
 # Disable mounting of unneeded filesystems CIS 1.1.1 and CIS 3.5
 cat << EOF >> /etc/modprobe.d/CIS.conf
 install cramfs /bin/true
